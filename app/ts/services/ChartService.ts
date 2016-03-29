@@ -1,27 +1,26 @@
 import {Injectable} from "angular2/core";
-import {Http, Response, Headers, RequestOptions} from "angular2/http";
+import {Http} from "angular2/http";
 import {Observable} from "rxjs/Observable";
 import "rxjs/Rx";
 import {ReportRequest} from '../models/ReportRequest'
 import {Indicadores} from '../models/Indicadores'
+import {VendaPorCombustivel} from '../models/charts/VendaPorCombustivel'
+import {BaseHttpRequest} from './BaseHttpRequest'
 
 @Injectable()
-export class ChartService {
-    private _apiUrl: string = "http://tec-soft.servehttp.com:8889/Api/Chart";
-    private _defaultRequestOptions: RequestOptions;
-    
-    constructor(private _http: Http) {
-        this._defaultRequestOptions = new RequestOptions({ headers: new Headers({ 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' } ) });
+export class ChartService extends BaseHttpRequest {
+    constructor(_http: Http) {
+        super('Chart');
+        this._http = _http;
      }
     
     indicadores(reportRequest: ReportRequest): Observable<Indicadores> {
-        let body = JSON.stringify(reportRequest);
-        return this._http.post(this._apiUrl, body, this._defaultRequestOptions)
-                         .map(res => <Indicadores>res.json())
-                         .catch(this.throwError);
+        reportRequest.ReportName = 'indicadores';
+        return this.SendPost<Indicadores>(reportRequest);
     }
     
-    private throwError(response) {
-        return Observable.throw(response.json().error || "Server error");
+    vendaPorCombustiveis(reportRequest: ReportRequest): Observable<VendaPorCombustivel> {
+        reportRequest.ReportName = 'graficos_venda_por_combustivel';
+        return this.SendPost<VendaPorCombustivel>(reportRequest);
     }
 }

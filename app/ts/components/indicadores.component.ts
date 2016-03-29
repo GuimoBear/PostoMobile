@@ -12,9 +12,7 @@ export class IndicadoresComponent implements OnInit{
     constructor(private _chartService: ChartService){}
     
     ngOnInit() {
-        let req = new ReportRequest();
-        req.ReportName = 'indicadores';
-        req.Period = 'semana';
+        let req = new ReportRequest('semana');
         this._chartService.indicadores(req).subscribe(data => this.Indicadores = data, error => console.log(error));
     }
 }

@@ -1,4 +1,7 @@
 export class ReportRequest {
+    constructor(_period: string) {
+        this.Period = _period;
+    }
     Key: string;
     ReportName: string;
     Period: string; // semana, mes, ano, customizado

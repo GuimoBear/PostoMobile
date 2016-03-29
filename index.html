@@ -16,23 +16,27 @@
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
             <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
         <![endif]-->
-
         <script src="node_modules/angular2/bundles/angular2-polyfills.js"></script>
         <script src="node_modules/systemjs/dist/system.src.js"></script>
         <script src="node_modules/rxjs/bundles/Rx.js"></script>
         <script src="node_modules/angular2/bundles/angular2.dev.js"></script>
         <script src="node_modules/angular2/bundles/router.dev.js"></script>
-        <script src="node_modules/angular2/bundles/http.dev.js"></script>
+        <script src="node_modules/angular2/bundles/http.dev.js"></script>        
+        <script src="node_modules/highcharts/highcharts.js"></script>
         <script>
             System.config({
-            packages:{
-                app:{
-                    format:'register',
-                    defaultExtension:'js'
-                }
-            } 
-            });
-            
+                traceurOptions: {
+                    annotations: true,
+                    memberVariables: true,
+                    types: true
+                }, 
+                packages:{
+                    app:{
+                        format:'register',
+                        defaultExtension:'js'
+                    }
+                } 
+            });            
             System.import('app/js/boot')
                     .then(null,console.error.bind(console));
         </script>

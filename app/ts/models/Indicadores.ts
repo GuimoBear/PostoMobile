@@ -13,5 +13,5 @@ class VlrdesContosAcrescimos {
 }
 
 export class Indicadores extends BaseResponse {
-    Result: Array<any>; // 1: VlrCombustivel, 2: VlrProdutos, 3: VlrdesContosAcrescimos
+    Result: Array<any>; // 0: VlrCombustivel, 1: VlrProdutos, 2: VlrdesContosAcrescimos
 }
