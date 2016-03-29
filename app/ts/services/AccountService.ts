@@ -7,11 +7,11 @@ import {AccountResponse} from '../models/AccountResponse'
 
 @Injectable()
 export class AccountService {
-    private _apiUrl: string = "http://postomobile.duckdns.org:9050/Api/Account";
+    private _apiUrl: string = "http://tec-soft.servehttp.com:8889/Api/Account";
     private _defaultRequestOptions: RequestOptions;
     
     constructor(private _http: Http) {
-        this._defaultRequestOptions = new RequestOptions({ headers: new Headers({ 'Content-Type': 'application/json' }) });
+        this._defaultRequestOptions = new RequestOptions({ headers: new Headers({ 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' } ) });
      }
     
     login(reportRequest: AccountRequest): Observable<AccountResponse> {

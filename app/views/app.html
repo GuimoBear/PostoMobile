@@ -1,7 +1,15 @@
-            <div class="container theme-showcase">
-                <div class="row">
-                    <div class="col-md-12 col-lg-12 col-sm-12">
-                        <router-outlet></router-outlet>
-                    </div>
-                </div>
-            </div>
+<div class="container theme-showcase">
+    <div class="row">
+        <div class="col-md-6 col-lg-6 col-sm-6">
+            <a class="navbar-brand" [routerLink]="['Indicadores']">Indicadores</a>
+        </div>
+        <div class="col-md-6 col-lg-6 col-sm-6">
+            <a class="navbar-brand" [routerLink]="['Auth']">Autenticação</a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 col-lg-12 col-sm-12">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,37 @@
+<div class="row" *ngIf="logado == false">
+    <div class="row">
+        <div class="col-sm-4 col-md-4 col-lg-4">
+            Usuario: 
+        </div>
+        <div class="col-sm-4 col-md-4 col-lg-4">
+            <input [(ngModel)]="Login.login" type="text" name="login" value="" />
+        </div>
+    </div>  
+    <div class="row">
+        <div class="col-sm-4 col-md-4 col-lg-4">
+            Senha: 
+        </div>
+        <div class="col-sm-4 col-md-4 col-lg-4">
+            <input [(ngModel)]="Login.password" type="password" name="password" value="" />
+        </div>
+    </div> 
+    <div class="row">
+        <div class="col-sm-8 col-md-8 col-lg-8">
+            <button (click)="auth(Login)">Login</button>
+        </div>
+    </div>   
+</div>
+<table *ngIf="Usuario" style="border: 1px;" cellspacing="1" cellpadding="1">
+    <thead>
+        <th>CNPJ</th>
+        <th>Nome</th>
+        <th>Chave</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="#posto of Usuario.Postos">
+            <td>{{posto.CNPJ}}</td>
+            <td>{{posto.Nome}}</td>
+            <td>{{posto.ChaveIdentificacao}}</td>
+        </tr>
+    </tbody>
+</table>

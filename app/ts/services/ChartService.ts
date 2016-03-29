@@ -7,11 +7,11 @@ import {Indicadores} from '../models/Indicadores'
 
 @Injectable()
 export class ChartService {
-    private _apiUrl: string = "http://postomobile.duckdns.org:9050/Api/Chart";
+    private _apiUrl: string = "http://tec-soft.servehttp.com:8889/Api/Chart";
     private _defaultRequestOptions: RequestOptions;
     
     constructor(private _http: Http) {
-        this._defaultRequestOptions = new RequestOptions({ headers: new Headers({ 'Content-Type': 'application/json' }) });
+        this._defaultRequestOptions = new RequestOptions({ headers: new Headers({ 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' } ) });
      }
     
     indicadores(reportRequest: ReportRequest): Observable<Indicadores> {
