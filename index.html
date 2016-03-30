@@ -23,6 +23,7 @@
         <script src="node_modules/angular2/bundles/router.dev.js"></script>
         <script src="node_modules/angular2/bundles/http.dev.js"></script>        
         <script src="node_modules/highcharts/highcharts.js"></script>
+        <script src="node_modules/ng2-highcharts/ng2-highcharts.js"></script>
         <script>
             System.config({
                 traceurOptions: {
@@ -36,9 +37,15 @@
                         defaultExtension:'js'
                     }
                 } 
-            });            
-            System.import('app/js/boot')
-                    .then(null,console.error.bind(console));
+            });
+            System.import('app/js/boot').then(null,console.error.bind(console));
+            
+            Highcharts.setOptions({
+                lang: {
+                    decimalPoint: ',',
+                    thousandsSep: '.'
+                }
+            });
         </script>
     </head>
     <base href="/">

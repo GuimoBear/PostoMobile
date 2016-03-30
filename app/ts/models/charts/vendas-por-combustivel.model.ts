@@ -1,4 +1,4 @@
-import {BaseResponse} from "../BaseResponse"
+import {BaseResponse} from "../base-response.model"
 
 export interface VendaCombustivel {
     combustivel: string;
@@ -6,6 +6,6 @@ export interface VendaCombustivel {
     percentual: number;
 }
 
-export class VendaPorCombustivel extends BaseResponse {
+export class VendasPorCombustivel extends BaseResponse {
     Result: Array<VendaCombustivel>;
 }

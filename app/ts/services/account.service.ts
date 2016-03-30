@@ -2,9 +2,9 @@ import {Injectable} from "angular2/core";
 import {Http} from "angular2/http";
 import {Observable} from "rxjs/Observable";
 import "rxjs/Rx";
-import {AccountRequest} from '../models/AccountRequest'
-import {AccountResponse} from '../models/AccountResponse'
-import {BaseHttpRequest} from './BaseHttpRequest'
+import {AccountRequest} from '../models/account-request.model'
+import {AccountResponse} from '../models/account-response.model'
+import {BaseHttpRequest} from './base-http.service'
 
 @Injectable()
 export class AccountService extends BaseHttpRequest {

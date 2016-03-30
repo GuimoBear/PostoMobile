@@ -1,7 +1,7 @@
 import {Component, OnInit} from 'angular2/core'
-import {AccountService} from "../services/AccountService";
-import {AccountRequest} from "../models/AccountRequest"
-import {AccountResponse} from "../models/AccountResponse"
+import {AccountService} from "../services/account.service";
+import {AccountRequest} from "../models/account-request.model"
+import {AccountResponse} from "../models/account-response.model"
 
 @Component({
     templateUrl: 'app/views/user.html'

@@ -1,11 +1,11 @@
 <div class="row" *ngIf="Indicadores">
     <div class="col-sm-4 col-md-4 col-lg-4">
-        {{Indicadores.Result[0].tmCombustivel}}
+        R$ {{Indicadores.Result[0].tmCombustivel | number:'.2'}}
     </div>
     <div class="col-sm-4 col-md-4 col-lg-4">
-        {{Indicadores.Result[1].tmProdutos}}
+        R$ {{Indicadores.Result[1].tmProdutos | number:'.2'}}
     </div>
     <div class="col-sm-4 col-md-4 col-lg-4">
-        {{Indicadores.Result[2].desContosAcrescimos}}
+        R$ {{Indicadores.Result[2].desContosAcrescimos | number:'.2'}}
     </div>
 </div>

@@ -1,7 +1,7 @@
 import {Component, OnInit} from 'angular2/core'
-import {ChartService} from "../services/ChartService";
-import{Indicadores} from "../models/Indicadores"
-import{ReportRequest} from "../models/ReportRequest"
+import {ChartService} from "../services/chart.service";
+import{Indicadores} from "../models/indicadores.model"
+import{ReportRequest} from "../models/report-request.model"
 
 @Component({
     templateUrl: 'app/views/indicadores.html'

@@ -1,4 +1,4 @@
-import {BaseResponse} from './BaseResponse'
+import {BaseResponse} from './base-response.model'
 
 class VlrCombustivel {
     tmCombustivel: number;

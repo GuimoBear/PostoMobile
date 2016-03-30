@@ -6,11 +6,12 @@
         "sourceMap": true,
         "emitDecoratorMetadata": true,
         "experimentalDecorators": true,
-        "removeComments": true,
-        "noImplicitAny": false,
-        "outDir": "app/js"
+        "removeComments": false,
+        "noImplicitAny": false, 
+		"outDir": "app/js"
     },
     "exclude": [
-        "node_modules"
+        "node_modules", 
+        "typings/tsd.d.ts"
     ]
 }
