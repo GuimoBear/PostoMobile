@@ -9,6 +9,7 @@ import {VendasPorGrupo} from '../models/charts/vendas-por-grupo.model'
 import {VendasPorTurno} from '../models/charts/vendas-por-turno.model'
 import {VendasPorMes} from '../models/charts/vendas-por-mes.model'
 import {VendasPorRecebimento} from '../models/charts/vendas-por-recebimento.model'
+import {VendasPorFuncionario} from '../models/charts/vendas-por-funcionario.model'
 import {BaseHttpRequest} from './base-http.service'
 
 @Injectable()
@@ -46,5 +47,10 @@ export class ChartService extends BaseHttpRequest {
     vendasPorRecebimento(reportRequest: ReportRequest): Observable<VendasPorRecebimento> {
         reportRequest.ReportName = 'graficos_venda_por_recebimento';
         return this.SendPost<VendasPorRecebimento>(reportRequest);
+    }
+    
+    vendasPorFuncionario(reportRequest: ReportRequest): Observable<VendasPorFuncionario> {
+        reportRequest.ReportName = 'graficos_venda_funcionario';
+        return this.SendPost<VendasPorFuncionario>(reportRequest);
     }
 }

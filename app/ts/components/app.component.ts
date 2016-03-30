@@ -7,6 +7,7 @@ import {VendaPorGrupoComponent} from './charts/vendas-por-grupo.component'
 import {VendaPorTurnoComponent} from './charts/vendas-por-turno.component'
 import {VendaPorMesComponent} from './charts/vendas-por-mes.component'
 import {VendaPorRecebimentoComponent} from './charts/vendas-por-recebimento.component'
+import {VendaPorFuncionarioComponent} from './charts/vendas-por-funcionario.component'
 
 @Component({
     selector: "posto-app", 
@@ -21,7 +22,8 @@ import {VendaPorRecebimentoComponent} from './charts/vendas-por-recebimento.comp
     { path: "/vendasPorGrupo", name: "VendasPorGrupo", component: VendaPorGrupoComponent }, 
     { path: "/vendasPorTurno", name: "VendasPorTurno", component: VendaPorTurnoComponent }, 
     { path: "/vendasPorMes", name: "VendasPorMes", component: VendaPorMesComponent },
-    { path: "/vendasPorRecebimento", name: "VendasPorRecebimento", component: VendaPorRecebimentoComponent }
+    { path: "/vendasPorRecebimento", name: "VendasPorRecebimento", component: VendaPorRecebimentoComponent },
+    { path: "/vendasPorFuncionario", name: "VendasPorFuncionario", component: VendaPorFuncionarioComponent }
 ])
 export class AppComponent {
 }

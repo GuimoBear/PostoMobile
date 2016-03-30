@@ -4,6 +4,7 @@ import {VendasPorGrupo} from "../models/charts/vendas-por-grupo.model"
 import {VendasPorTurno} from "../models/charts/vendas-por-turno.model"
 import {VendasPorMes} from "../models/charts/vendas-por-mes.model"
 import {VendasPorRecebimento} from "../models/charts/vendas-por-recebimento.model"
+import {VendasPorFuncionario} from "../models/charts/vendas-por-funcionario.model"
 import {ChartDataModel} from "../models/charts/chart-data.model"
 
 @Injectable()
@@ -26,6 +27,10 @@ export class ChartFactory {
     
     private isVendaPorRecebimento(_dados: any): boolean {
         return _dados.Result.length > 0 && _dados.Result[0].tipo;
+    }
+    
+    private isVendaPorFuncionario(_dados: any): boolean {
+        return _dados.Result.length > 0 && _dados.Result[0].funcionario;
     }
     
     private convertVendasPorCombustivelToChartData(data: VendasPorCombustivel): ChartDataModel {
@@ -78,11 +83,23 @@ export class ChartFactory {
         return chartData;
     }
     
+    private convertVendasPorFuncionarioToChartData(data: VendasPorFuncionario): ChartDataModel {
+        let chartData = new ChartDataModel();
+        chartData.textTitle = "Vendas por funcionario";
+        chartData.categories = ['Funcionario'];
+        chartData.series = [];
+        data.Result.forEach((value) => { chartData.series.push({ name: value.funcionario, data: [value.valor] }); });
+        return chartData;
+    }
+    
     getMonetaryBarChart<T>(_dados: T): any {
         let chartData: ChartDataModel;
         if(this.isVendaPorTurno(_dados)) {            
             let data = <VendasPorTurno><any> _dados;
             chartData = this.convertVendasPorTurnoToChartData(data);
+        } else if(this.isVendaPorFuncionario(_dados)) {
+            let data = <VendasPorFuncionario><any> _dados;
+            chartData = this.convertVendasPorFuncionarioToChartData(data);
         } else if(this.isVendaPorRecebimento(_dados)) {
             let data = <VendasPorRecebimento><any> _dados;
             chartData = this.convertVendasPorRecebimentoToChartData(data);
