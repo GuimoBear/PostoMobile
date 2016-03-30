@@ -4,7 +4,8 @@ import {AccountRequest} from "../models/account-request.model"
 import {AccountResponse} from "../models/account-response.model"
 
 @Component({
-    templateUrl: 'app/views/user.html'
+    templateUrl: 'app/views/user.html', 
+    providers: [AccountService]
 })
 export class UserComponent implements OnInit {  
     logado: boolean;  
